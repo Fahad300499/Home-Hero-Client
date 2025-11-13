@@ -102,7 +102,9 @@ const MyServices = () => {
                                         <Link to={`/update/${service._id}`} className="btn btn-sm btn-success">
                                             Update
                                         </Link>
-                                        {/* ****** */}
+                                        <button onClick={() => handleDeleteService(service._id)} className="btn btn-sm btn-error">
+                                            Delete
+                                        </button>
                                     </td>
                                 </tr>
                             ))}
