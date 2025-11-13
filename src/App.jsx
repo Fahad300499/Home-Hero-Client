@@ -45,7 +45,7 @@ const App = () => {
 
     const slideCount = services.length;
 
-    // স্লাইড পরিবর্তনে লুপ ম্যানেজ করা
+ 
     const goToSlide = useCallback((index) => {
         let newIndex = index;
         if (index < 0) {
@@ -75,7 +75,7 @@ const App = () => {
         };
     }, [nextSlide]);
 
-    // স্লাইড ইন্টারেকশন হলে অটো-প্লে রিসেট করা
+   
     const resetAutoPlay = () => {
         if (autoPlayRef.current) {
             clearInterval(autoPlayRef.current);
@@ -86,16 +86,16 @@ const App = () => {
     const handleExplore = (serviceName) => {
         setMessage(`পরিষেবা পৃষ্ঠায় পুনঃনির্দেশিত করা হবে: ${serviceName}। (Redirecting to service page: ${serviceName})`);
         setMessageVisible(true);
-        resetAutoPlay(); // ইন্টারেকশন হওয়ায় অটো-প্লে রিসেট করা
+        resetAutoPlay(); 
 
-        // ৩ সেকেন্ড পর মেসেজ হাইড করা
+      
         setTimeout(() => {
             setMessageVisible(false);
             setMessage('');
         }, 3000);
     };
 
-    // রেন্ডারিং স্লাইড ডট
+   
     const renderDots = () => (
         <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
             {services.map((_, index) => (
@@ -114,7 +114,7 @@ const App = () => {
         </div>
     );
 
-    // স্লাইডার কন্টেইনারে মাউস এন্টার/লিভ ইভেন্ট হ্যান্ডলার
+    
     const handleMouseEnter = () => clearInterval(autoPlayRef.current);
     const handleMouseLeave = resetAutoPlay;
 
