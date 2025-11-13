@@ -22,12 +22,12 @@ const Home = () => {
                     <p>Provider: {service.ProviderName}</p>
                    </div>
                    {/* <Link to={`/servicesDetails/${service._id}`} className='btn '>Service Details</Link> */}
-                   <Link to={`/servicesDetails/${service._id}`} className='btn '>Service Details</Link>
+                   <Link to={`/servicesDetails/${service._id}`} className='btn text-white bg-blue-500'>Service Details</Link>
                 </div>)
             }  
         </div>
 
-<Link to='/services' className='btn mb-4 text-white bg-gray-500 flex justify-center'>Show All Services</Link>
+<Link to='/services' className='btn mb-4 text-white bg-blue-500 flex justify-center'>Show All Services</Link>
         <div>
             <ChooseUs></ChooseUs>
         </div>

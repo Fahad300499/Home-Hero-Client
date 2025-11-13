@@ -101,11 +101,11 @@ const ServiceDetails = () => {
                                 <label className="label">Email</label>
                                 <input type="email" name='email' className="input" readOnly defaultValue={user.email} />
 
-                                {/* <label className="label">Service ID</label>
-                                <input type="text" name='serviceId' className="input" /> */}
+                                 <label className="label">Service ID</label>
+                                <input type="text" name='serviceId' className="input" />
 
-                                {/* <label className="label">Booking Date</label>
-                                <input type="text" name='bookingDate' className="input" /> */}
+                                 <label className="label">Booking Date</label>
+                                <input type="text" name='bookingDate' className="input" /> 
 
                                 <label className="label">Price</label>
                                 <input type="text" name='price' className="input" />

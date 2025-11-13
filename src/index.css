@@ -7,7 +7,8 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 a.active {
-    text-decoration: underline;
     color: blue;
-    font-weight: bold;
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding:0px 5px;
 }

@@ -4,9 +4,10 @@ import { Link } from 'react-router';
 const Error = () => {
     return (
         <div className='text-center mt-50'>
-            <h2 className='text-2xl'>Error </h2>
-            <p className='text-8xl font-bold mb-10'>404</p>
-            <Link to='/' className='btn btn-primary'>Back To Home</Link>
+            <h2 className='text-9xl font-bold mb-5 text-blue-500'>Oops!</h2>
+            <p className='text-2xl my-3'>404- PAGE NOT FOUND</p>
+            <p>The page you are looking for might have been removed <br /> had its name changed or is temporarily unavailable</p>
+            <Link to='/' className='btn btn-primary mt-6'>Back To Home</Link>
         </div>
     );
 };

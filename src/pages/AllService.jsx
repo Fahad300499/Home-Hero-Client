@@ -14,7 +14,7 @@ const AllService = ({service}) => {
                     <p>Provider: {service.ProviderName}</p>
                    </div>
                    {/* <Link to={`/servicesDetails/${service._id}`} className='btn '>Service Details</Link> */}
-                   <Link to={`/servicesDetails/${service._id}`} className='btn '>Service Details</Link>
+                   <Link to={`/servicesDetails/${service._id}`} className='btn bg-blue-500 text-white'>Service Details</Link>
 
                 </div>
     );

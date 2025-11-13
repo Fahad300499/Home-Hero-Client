@@ -101,8 +101,8 @@ return (
 </label>
             {
                 user ?
-                    <button onClick={handleLogOut} className="btn" >Log Out</button> :
-                    <Link to='/login' className="btn">Log In</Link>
+                    <button onClick={handleLogOut} className="btn bg-blue-500 text-white" >Log Out</button> :
+                    <Link to='/login' className="btn bg-blue-500 text-white">Log In</Link>
             }
         </div>
     </div>
