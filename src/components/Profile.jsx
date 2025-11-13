@@ -101,7 +101,7 @@ const Profile = () => {
                 <Navbar></Navbar>
             </div>
 
-            <div className='w-full max-w-lg mx-auto mt-10 p-8 bg-white border rounded-2xl shadow-2xl space-y-5'>
+            <div className=' mr-2 ml-2 md:max-w-lg md:mx-auto mt-10 p-4 md:p-8 bg-white border rounded-2xl shadow-2xl space-y-5'>
                 <h1 className='text-3xl text-center font-bold text-gray-800 mb-6'>My Profile</h1>
 
 

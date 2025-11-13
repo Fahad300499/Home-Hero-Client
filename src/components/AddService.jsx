@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useNavigate } from 'react-router';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const AddService = () => {
     const navigate = useNavigate();
@@ -34,8 +35,6 @@ const AddService = () => {
         .then(data=>{
             console.log(data)
             if(data.insertedId){ 
-                // টোস্ট নোটিফিকেশন দেখান
-                // ✅ সফলভাবে যোগ করার পর All Services পেইজে নিয়ে যান
                 alert('Add Service Successfully')
                 e.target.reset();
                 navigate('/my-services'); 
@@ -49,9 +48,9 @@ const AddService = () => {
             <div>
                 <Navbar></Navbar>
             </div>
-            <div className='w-11/12 mx-auto my-10'>
+            <div className='md:w-11/12 md:mx-auto my-10'>
             <h1 className='text-center text-2xl font-bold text-blue-500 mb-5'>Add Your Service</h1>
-                <div className='ml-120'>
+                <div className= 'ml-5 md:ml-60 lg:ml-120'>
                     <form onSubmit={handleAddService}>
                         <fieldset className="fieldset">
 
@@ -72,6 +71,9 @@ const AddService = () => {
                         </fieldset>
                     </form>
                 </div>
+            </div>
+            <div>
+                <Footer></Footer>
             </div>
         </div>
     );

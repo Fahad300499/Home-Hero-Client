@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../context/AuthProvider';
 import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
+import Footer from './Footer';
 
 const Register = () => {
     const { signUpWithUser,googleSignInUser } = use(AuthContext);
@@ -114,6 +115,7 @@ const Register = () => {
                     <p className="text-center">If you have aaccount , Please <Link className="text-blue-600" to='/login'>Login</Link></p>
 
                 </div>
+                <Footer></Footer>
             </div>
         </div>
     );

@@ -5,7 +5,7 @@ const ChooseUs = () => {
     return (
         <div className='my-10'>
             <h2 className='text-center my-3 text-2xl font-bold text-blue-500'>Why choose US</h2>
-            <div className='grid grid-cols-3 gap-3  '>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3  '>
                 <div className='border border-gray-200 p-10 animate__animated animate__slideInLeft card transition-all duration-300 hover:scale-[1.03]'>
                     <h2 className='text-center font-bold'>High Quality</h2>
                     <p className='text-center'>

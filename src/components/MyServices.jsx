@@ -4,6 +4,7 @@ import { AuthContext } from '../context/AuthProvider';
 import { useState } from 'react';
 import { Link } from 'react-router';
 import Swal from 'sweetalert2';
+import Footer from './Footer';
 
 const MyServices = () => {
     const { user } = use(AuthContext)
@@ -82,18 +83,12 @@ const MyServices = () => {
                                     <td>{index + 1}</td>
                                     <td>
                                         <div className="flex items-center gap-3">
-                                            {/* <div className="avatar">
-                                                <div className="mask mask-squircle h-12 w-12">
-                                                    <img
-                                                        src={service.ImageURL} // ✅ সার্ভিস ইমেজ ব্যবহার করা হলো
-                                                        alt={service.ServiceName} />
-                                                </div>
-                                            </div> */}
+                                           
                                             <div className="font-bold">{service.ServiceName}</div>
                                         </div>
                                     </td>
                                     <td>
-                                        {service.Email} {/* Category ডেটা যোগ করা উচিত */}
+                                        {service.Email} 
                                     </td>
                                     <td>
                                         ৳{service.Price}
@@ -111,6 +106,9 @@ const MyServices = () => {
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div className='mt-10'>
+                <Footer></Footer>
             </div>
         </div>
     );

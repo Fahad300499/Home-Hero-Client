@@ -5,8 +5,8 @@ const Customer = () => {
         <div className='my-20'>
             <h1 className='text-center text-2xl font-bold text-blue-500 my-5'>Customer Testimonials</h1>
             
-            <div className='flex justify-between gap-5'>
-                <div class="bg-white p-8 rounded-xl shadow-xl transition hover:shadow-2xl">
+            <div className=' md:flex  justify-between gap-5'>
+                <div class="bg-white mb-4 p-8 rounded-xl shadow-xl transition hover:shadow-2xl">
                 <div class="flex items-center text-blue-500 mb-4">
                     ⭐⭐⭐⭐⭐
                 </div>
@@ -22,7 +22,7 @@ const Customer = () => {
                 <p class="text-xs mt-3 text-blue-400">Book Service: Package 1</p>
             </div>
 
-            <div class="bg-white p-8 rounded-xl shadow-xl transition hover:shadow-2xl">
+            <div class="bg-white mb-4 p-8 rounded-xl shadow-xl transition hover:shadow-2xl">
                 <div class="flex items-center text-blue-500 mb-4">
                     ⭐⭐⭐⭐
                 </div>

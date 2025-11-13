@@ -36,10 +36,7 @@ const Home = () => {
                         />
                         <h2 className='font-bold mt-2'>{service.Category}</h2>
                         <p className='text-sm mt-1'>{service.Description}</p>
-                        {/* <div className='text-[12px] flex justify-between my-2 font-bold'>
-                            <p>Price: {service.Price}</p>
-                            <p>Provider: {service.ProviderName}</p>
-                        </div> */}
+                      
                         <p className='text-yellow-500 font-semibold mb-2'>
                             {'⭐'.repeat(Math.round(service.avgRating))} ({service.avgRating.toFixed(1)})
                         </p>

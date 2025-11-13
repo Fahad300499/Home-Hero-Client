@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../context/AuthProvider';
 import Swal from 'sweetalert2';
+import Footer from './Footer';
 
 
 const Login = () => {
@@ -85,6 +86,7 @@ const Login = () => {
                     <p className="text-center">If you new Here, Please <Link className="text-blue-600" to='/register'>Register</Link></p>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
