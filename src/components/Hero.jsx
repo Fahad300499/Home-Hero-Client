@@ -11,7 +11,26 @@ import { Link } from 'react-router';
 const Hero = () => {
     return (
 
-  //  *******
+   <Swiper
+      spaceBetween={50}
+      slidesPerView={1}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      <SwiperSlide>
+        <img className='w-full h-[500px] object-fill' src={pic1} alt="image1" srcset="" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className='w-full h-[500px] object-fill' src={pic2} alt="" srcset="" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className='w-full h-[500px] object-fill' src={pic3} alt="" srcset="" />
+      </SwiperSlide>
+      <div className="text-center mx-auto border text-xl shadow-2xl border-gray-200 mb-8">
+        <Link to ='/services'>Explore</Link>
+      </div>
+      
+    </Swiper>
 
 
     );
