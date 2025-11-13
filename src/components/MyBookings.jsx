@@ -18,7 +18,7 @@ const MyBookings = () => {
   // Fetch bookings for logged-in user
   useEffect(() => {
     if (user?.email) {
-      fetch(`home-hero-server-henna.vercel.app/bookings?email=${user?.email}`)
+      fetch(`https://home-hero-server.onrender.com/bookings?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setBookings(data))
         .catch(err => console.error(err));
@@ -37,7 +37,7 @@ const MyBookings = () => {
       confirmButtonText: "Yes, delete it!"
     }).then(result => {
       if (result.isConfirmed) {
-        fetch(`home-hero-server-henna.vercel.app/bookings/${_id}`, { method: 'DELETE' })
+        fetch(`https://home-hero-server.onrender.com/bookings/${_id}`, { method: 'DELETE' })
           .then(res => res.json())
           .then(data => {
             if (data.deletedCount) {
@@ -68,7 +68,7 @@ const MyBookings = () => {
       userEmail: user.email
     };
 
-    fetch(`http://localhost:3000/services/review/${selectedBooking.booking}`, {
+    fetch(`https://home-hero-server.onrender.com/services/review/${selectedBooking.booking}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(reviewData)

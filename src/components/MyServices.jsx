@@ -13,7 +13,7 @@ const MyServices = () => {
     useEffect(() => {
         if (user?.email) {
 
-            fetch(`home-hero-server-henna.vercel.app/all-services?email=${user.email}`)
+            fetch(`https://home-hero-server.onrender.com/all-services?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
@@ -34,7 +34,7 @@ const MyServices = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`home-hero-server-henna.vercel.app/services/${_id}`, {
+                fetch(`https://home-hero-server.onrender.com/services/${_id}`, {
                     method: 'DELETE'
                 })
                 .then(res=>res.json())

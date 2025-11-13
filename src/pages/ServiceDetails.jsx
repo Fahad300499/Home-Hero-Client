@@ -29,7 +29,7 @@ const ServiceDetails = () => {
       return;
     }
 
-    fetch('home-hero-server-henna.vercel.app/bookings', {
+    fetch('https://home-hero-server.onrender.com/bookings', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(newBooking)

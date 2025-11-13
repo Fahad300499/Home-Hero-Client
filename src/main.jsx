@@ -28,19 +28,19 @@ const router = createBrowserRouter([
       {
         path: '/',
         Component: Home,
-        loader: ()=> fetch('home-hero-server-henna.vercel.app/services')
+        loader: ()=> fetch('https://home-hero-server.onrender.com/services')
       },
     ]
   },
         {
         path: '/services',
         Component: Services,
-        loader: ()=> fetch('home-hero-server-henna.vercel.app/all-services')
+        loader: ()=> fetch('https://home-hero-server.onrender.com/all-services')
       },
        {
         path: '/AddServices',
         Component: AddService,
-        // loader: ()=> fetch('http://localhost:3000/services')
+        // loader: ()=> fetch('https://home-hero-server.onrender.com/services')
       },
       {
         path: '/my-services',
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
       {
         path: '/servicesDetails/:id',
         element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-        loader:({params})=>fetch(`home-hero-server-henna.vercel.app/services/${params.id}`)
+        loader:({params})=>fetch(`https://home-hero-server.onrender.com/services/${params.id}`)
       },
       {
         path: '/my-bookings',
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
       {
         path:'/update/:id',
         Component: Update,
-        loader:({params})=>fetch(`home-hero-server-henna.vercel.app/services/${params.id}`)
+        loader:({params})=>fetch(`https://home-hero-server.onrender.com/services/${params.id}`)
       },
       
       {
