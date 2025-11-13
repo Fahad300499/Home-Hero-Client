@@ -53,7 +53,18 @@ const AddService = () => {
                 <form onSubmit={handleAddService}>
                         <fieldset className="fieldset">
 
-                            {/* **** */}
+                            <label className="label">ServiceName</label>
+                            <input type="text" name='ServiceName' className="input" placeholder="Name" />
+
+                            <label className="label">ImageURL</label>
+                            <input type="photo" name='ImageURL' className="input" placeholder="Photo" />
+
+                            <label className="label">Email</label>
+                            <input type="email" name='email' className="input" placeholder="Email" />
+
+                            <label className="label">Price</label>
+                            <input type="text" name='price' className="input" placeholder="Password" />
+
 
                             <button className="btn btn-neutral mt-4">Add Service</button>
                         </fieldset>
