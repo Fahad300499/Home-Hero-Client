@@ -49,8 +49,10 @@ const AddService = () => {
             <div>
                 <Navbar></Navbar>
             </div>
-            <div className=''>
-                <form onSubmit={handleAddService}>
+            <div className='w-11/12 mx-auto my-10'>
+            <h1 className='text-center text-2xl font-bold text-blue-500 mb-5'>Add Your Service</h1>
+                <div className='ml-120'>
+                    <form onSubmit={handleAddService}>
                         <fieldset className="fieldset">
 
                             <label className="label">ServiceName</label>
@@ -66,9 +68,10 @@ const AddService = () => {
                             <input type="text" name='price' className="input" placeholder="Password" />
 
 
-                            <button className="btn btn-neutral mt-4">Add Service</button>
+                            <button className="btn btn-neutral mt-4 w-[320px]">Add Service</button>
                         </fieldset>
                     </form>
+                </div>
             </div>
         </div>
     );

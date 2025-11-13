@@ -1,139 +1,133 @@
-
-
-import React, { use, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useLoaderData } from 'react-router';
 import Navbar from '../components/Navbar';
 import { AuthContext } from '../context/AuthProvider';
 import Swal from 'sweetalert2';
 
 const ServiceDetails = () => {
-    const  service  = useLoaderData();
+  const [isBooked, setBooked] = useState(false);
+  const service = useLoaderData();
+  const { user } = React.useContext(AuthContext);
 
-    const {_id: bookingId} = service
+  const modalRef = useRef(null);
+  const handleModal = () => modalRef.current.showModal();
 
-    const { user } = use(AuthContext);
-    console.log(user.email)
+  const handleBooking = (e) => {
+    e.preventDefault();
 
-    const modalRef = useRef(null);
-    const handleModal = () => {
-        modalRef.current.showModal();
-        
+    const email = e.target.email.value;
+    const price = e.target.price.value;
+
+    const newBooking = {
+      booking: service._id,
+      Email: email,
+      price
+    };
+
+    if (user.email === service.Email) {
+      alert("You can't book this service because you are the provider");
+      return;
     }
 
-
-    const handlebooking = (e) => {
-        e.preventDefault();
-        
-        const email = e.target.email.value;
-        const price = e.target.price.value;
-        console.log(bookingId, email, price)
-
-        const newBooking = {
-            booking: bookingId,
-            Email: email
-        }
-
-               if (user.email === email) {
-            alert('You cant book this service, because you are the provider');
-            return;
-        }
-        
-
-        fetch('http://localhost:3000/bookings', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newBooking)
-        })
-            .then(res => res.json())
-            .then(data => {
-          
-                console.log(data)
-                
-                Swal.fire({
-            title: "Booking Successfully",
-            icon: "success",
-            draggable: true
+    fetch('http://localhost:3000/bookings', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(newBooking)
+    })
+      .then(res => res.json())
+      .then(() => {
+        setBooked(true);
+        Swal.fire({
+          title: "Booking Successful",
+          icon: "success",
+          draggable: true
         });
-            })
+      });
+  };
 
+  return (
+    <div>
+      <Navbar />
 
-    }
-
-
-
-
-    return (
-        <div>
-            <div>
-                <Navbar></Navbar>
+      <div className="w-11/12 mx-auto my-10">
+        <div className="flex flex-col md:flex-row gap-10">
+          {/* Service Info */}
+          <div className="flex-1">
+            <h3 className="text-center font-bold text-2xl mb-2">{service.ServiceName}</h3>
+            <img
+              className="h-[250px] w-full object-cover rounded-lg"
+              src={service.ImageURL}
+              alt={service.ServiceName}
+            />
+            <h2 className="font-semibold mt-3">{service.Category}</h2>
+            <p className="text-sm mt-1">{service.Description}</p>
+            <div className="flex justify-between my-2 font-bold text-sm">
+              <p>Price: {service.Price}</p>
+              <p>Provider: {service.ProviderName}</p>
             </div>
-            <div className='flex justify-center gap-10 my-10'>
-                <div>
+            <button onClick={handleModal} className="btn btn-primary w-full mt-3">
+              Book Now
+            </button>
+          </div>
 
-                <div>
-                    <h3 className='text-center font-bold mb-2'>{service.ServiceName}</h3>
-                   <img className="h-[250px] w-full" src={service.ImageURL} alt="" srcset="" />
-                   <h2 className='font-bold'>{service.Category}</h2>
-                   <p className='text-sm'>{service.Description}</p>
-                   <div className='text-[12px] flex justify-between my-2 font-bold'>
-                    <p> {service.Price}</p>
-                    <p>Provider: {service.ProviderName}</p>
+          {/* Reviews Section */}
+          <div className="flex-1">
+            <h3 className="text-xl font-bold mb-3">Reviews</h3>
+            {service.reviews && service.reviews.length > 0 ? (
+              <div className="space-y-4">
+                {service.reviews.map((rev, idx) => (
+                  <div key={idx} className="border p-3 rounded-lg bg-gray-50">
+                    <div className="flex justify-between items-center mb-1">
+                      <p className="font-semibold">{rev.userEmail}</p>
+                      <p className="text-yellow-500 font-bold">{'⭐'.repeat(rev.rating)}</p>
                     </div>
-                    <div>
-                <button onClick={handleModal} className='btn btn-primary w-full'>Book Now</button>
-            </div>
-                </div>
-            </div>
-            
-            </div>
-            <div>
-
-
-                <dialog ref={modalRef} className="modal modal-bottom sm:modal-middle">
-                    <div className="modal-box">
-                        <h3 className="font-bold text-lg">Booking Service</h3>
-                        <form onSubmit={handlebooking}>
-                            <fieldset className="fieldset">
-
-
-                                <label className="label">Email</label>
-                                <input type="email" name='email' className="input" readOnly defaultValue={user.email} />
-
-                                 <label className="label">Service ID</label>
-                                <input type="text" name='serviceId' className="input" />
-
-                                 <label className="label">Booking Date</label>
-                                <input type="text" name='bookingDate' className="input" /> 
-
-                                <label className="label">Price</label>
-                                <input type="text" name='price' className="input" />
-
-                                <button className="btn btn-neutral mt-4">Book your Service</button>
-                            </fieldset>
-                        </form>
-
-                        <div className="modal-action">
-                            <form method="dialog">
-                                {/* if there is a button in form, it will close the modal */}
-                                <button className="btn">Cancle</button>
-                            </form>
-                        </div>
-                    </div>
-                </dialog>
-
-            </div>
+                    <p>{rev.message}</p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-gray-500">No reviews yet.</p>
+            )}
+          </div>
         </div>
-    );
+      </div>
+
+      {/* Booking Modal */}
+      {!isBooked && (
+        <dialog ref={modalRef} className="modal modal-bottom sm:modal-middle">
+          <div className="modal-box">
+            <h3 className="font-bold text-lg mb-3">Book This Service</h3>
+            <form onSubmit={handleBooking} className="space-y-3">
+              <label className="label">Email</label>
+              <input
+                type="email"
+                name="email"
+                className="input input-bordered w-full"
+                readOnly
+                defaultValue={user.email}
+              />
+
+              <label className="label">Price</label>
+              <input type="text" name="price" className="input input-bordered w-full" defaultValue={service.Price} />
+
+              <label className="label">Booking Date</label>
+              <input type="date" name="bookingDate" className="input input-bordered w-full" required />
+
+              <div className="modal-action flex justify-between mt-4">
+                <button type="submit" className="btn btn-primary w-full mr-2">Book Now</button>
+                <form method="dialog">
+                  <button className="btn btn-outline w-full ml-2">Cancel</button>
+                </form>
+              </div>
+            </form>
+          </div>
+        </dialog>
+      )}
+    </div>
+  );
 };
 
 export default ServiceDetails;
-
-
-
-
-
 
 
 

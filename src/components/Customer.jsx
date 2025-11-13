@@ -27,7 +27,7 @@ const Customer = () => {
                     ⭐⭐⭐⭐
                 </div>
                 <p class="text-gray-700 italic text-lg mb-6">
-                    "I never thought I could book a service so quickly and easily. The whole process was incredibly smooth and the support team was extremely helpful."
+                    "I am very satisfied with Holhold Service! To be honest, at first I thought that the quality of the service might not be good at such a low cost. But my idea was proven wrong."
                 </p>
                 <div class="flex items-center">
 
@@ -44,7 +44,7 @@ const Customer = () => {
                     ⭐⭐⭐⭐
                 </div>
                 <p class="text-gray-700 italic text-lg mb-6">
-                    "I never thought I could book a service so quickly and easily. The whole process was incredibly smooth and the support team was extremely helpful."
+                    "The experience of calling Holhold Service was amazing. I needed a quick and reliable cleaning service before a big event at my home, and the professionalism of the Holhold team was truly commendable."
                 </p>
                 <div class="flex items-center">
 
