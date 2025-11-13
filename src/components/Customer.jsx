@@ -2,7 +2,8 @@ import React from 'react';
 
 const Customer = () => {
     return (
-        <div className='my-20'>
+        <div className='w-10/12 mx-auto'>
+            <div className='my-20'>
             <h1 className='text-center text-2xl font-bold text-blue-500 my-5'>Customer Testimonials</h1>
             
             <div className=' md:flex  justify-between gap-5'>
@@ -39,12 +40,12 @@ const Customer = () => {
             </div>
 
 
-           <div class="bg-white p-8 rounded-xl shadow-xl transition hover:shadow-2xl">
+           <div class="bg-white p-5 rounded-xl shadow-xl transition hover:shadow-2xl">
                 <div class="flex items-center text-blue-500 mb-4">
                     ⭐⭐⭐⭐
                 </div>
                 <p class="text-gray-700 italic text-lg mb-6">
-                    "The experience of calling Holhold Service was amazing. I needed a quick and reliable cleaning service before a big event at my home, and the professionalism of the Holhold team was truly commendable."
+                    "The experience of calling Holhold Service was amazing. I needed a quick and reliable cleaning service before a big and the professionalism of the Holhold team was truly commendable."
                 </p>
                 <div class="flex items-center">
 
@@ -57,6 +58,7 @@ const Customer = () => {
             </div>
 
 
+        </div>
         </div>
     );
 };

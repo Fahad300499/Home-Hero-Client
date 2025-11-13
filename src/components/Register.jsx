@@ -80,10 +80,12 @@ const Register = () => {
     }
 
     return (
-        <div className='w-11/12 mx-auto'>
+        <div>
             <div>
                 <Navbar></Navbar>
             </div>
+            <div className='w-10/12 mx-auto'>
+            
             <div className=" flex justify-center mt-10 mx-auto card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                 <h1 className="text-4xl font-bold text-center">Register Now!</h1>
                 <div className="card-body">
@@ -117,7 +119,9 @@ const Register = () => {
                 </div>
                 
             </div>
-            <Footer></Footer>
+            
+        </div>
+        <Footer></Footer>
         </div>
     );
 };

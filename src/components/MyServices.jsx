@@ -61,7 +61,7 @@ const MyServices = () => {
     return (
         <div>
             <Navbar />
-            <div className='w-11/12 mx-auto'>
+            <div className='w-10/12 mx-auto'>
                 <h1 className='text-center my-5 text-2xl font-bold'>My Service: {services.length}</h1>
 
                 {/* ✅ ১. টেবিলের কাঠামো লুপের বাইরে একবার তৈরি হলো */}
@@ -77,7 +77,7 @@ const MyServices = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {/* ✅ ২. শুধুমাত্র রো (<tr>) গুলি লুপের ভেতরে থাকবে */}
+                          
                             {services.map((service, index) => (
                                 <tr key={service._id}>
                                     <td>{index + 1}</td>

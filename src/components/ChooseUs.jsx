@@ -3,7 +3,8 @@ import 'animate.css';
 
 const ChooseUs = () => {
     return (
-        <div className='my-10'>
+        <div className='w-10/12 mx-auto'>
+            <div className='my-10'>
             <h2 className='text-center my-3 text-2xl font-bold text-blue-500'>Why choose US</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3  '>
                 <div className='border border-gray-200 p-10 animate__animated animate__slideInLeft card transition-all duration-300 hover:scale-[1.03]'>
@@ -38,6 +39,7 @@ const ChooseUs = () => {
                     <p className='text-center'>I needed a last-minute clean before an unexpected guest arrived, and Holhold Service was a lifesaver! I chose their Quick Cleaning option, and I was genuinely impressed by how fast and incredibly efficient the team was.</p>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

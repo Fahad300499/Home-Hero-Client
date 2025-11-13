@@ -89,7 +89,7 @@ const MyBookings = () => {
   return (
     <div>
       <Navbar />
-      <div className='w-full md:w-11/12 md:mx-auto'>
+      <div className='w-full md:w-10/12 md:mx-auto'>
         <h1 className='text-center my-5 text-2xl font-bold'>
           My Bookings: {bookings.length}
         </h1>

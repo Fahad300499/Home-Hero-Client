@@ -44,7 +44,8 @@ const AddService = () => {
     }
 
     return (
-        <div className='w-11/12 mx-auto '>
+        <div>
+            <div className='w-10/12 mx-auto '>
             <div>
                 <Navbar></Navbar>
             </div>
@@ -72,10 +73,13 @@ const AddService = () => {
                     </form>
                 </div>
             </div>
-            <div>
-                <Footer></Footer>
-            </div>
+        
         </div>
+        <div>
+            <Footer></Footer>
+        </div>
+        </div>
+        
     );
 };
 

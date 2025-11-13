@@ -57,10 +57,11 @@ const Login = () => {
 
 
     return (
-        <div className='w-11/12 mx-auto'>
+        <div>
             <div>
                 <Navbar></Navbar>
             </div>
+            <div className='w-10/12 mx-auto'>
             <div className=" flex justify-center mt-10 mx-auto card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                 <h1 className="text-4xl font-bold text-center">Login now!</h1>
                 <div className="card-body">
@@ -86,7 +87,9 @@ const Login = () => {
                     <p className="text-center">If you new Here, Please <Link className="text-blue-600" to='/register'>Register</Link></p>
                 </div>
             </div>
-            <Footer></Footer>
+            
+        </div>
+        <Footer></Footer>
         </div>
     );
 };
