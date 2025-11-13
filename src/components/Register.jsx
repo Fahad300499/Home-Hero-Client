@@ -115,8 +115,9 @@ const Register = () => {
                     <p className="text-center">If you have aaccount , Please <Link className="text-blue-600" to='/login'>Login</Link></p>
 
                 </div>
-                <Footer></Footer>
+                
             </div>
+            <Footer></Footer>
         </div>
     );
 };
