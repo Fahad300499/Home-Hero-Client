@@ -45,10 +45,11 @@ const AddService = () => {
 
     return (
         <div>
-            <div className='w-10/12 mx-auto '>
             <div>
                 <Navbar></Navbar>
             </div>
+            <div className='w-10/12 mx-auto '>
+            
             <div className='md:w-11/12 md:mx-auto my-10'>
             <h1 className='text-center text-2xl font-bold text-blue-500 mb-5'>Add Your Service</h1>
                 <div className= 'ml-5 md:ml-60 lg:ml-120'>
