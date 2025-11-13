@@ -8,7 +8,17 @@ const MyBookings = () => {
     const { user } = use(AuthContext)
         const [bookings, setBookings] = useState([]);
 
-    //    ****
+    useEffect(() => {
+                if (user?.email) {
+        
+                    fetch(`http://localhost:3000/bookings?email=${user.email}`)
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data)
+                            setBookings(data)
+                        })
+                }
+            }, [user?.email])
 
 
             const handleDeleteBooking = (_id) => {
