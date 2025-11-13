@@ -89,7 +89,11 @@ const Register = () => {
                     <form onSubmit={handleSignUp}>
                         <fieldset className="fieldset">
 
-                           {/* ******* */}
+                            <label className="label">Name</label>
+                            <input type="text" name='name' className="input" placeholder="Name" />
+
+                            <label className="label">Photo</label>
+                            <input type="photo" name='photo' className="input" placeholder="Photo" />
 
                             <label className="label">Email</label>
                             <input type="email" name='email' className="input" placeholder="Email" />
