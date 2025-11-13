@@ -99,7 +99,7 @@ const ServiceDetails = () => {
 
 
                                 <label className="label">Email</label>
-                                <input type="email" name='email' className="input" />
+                                <input type="email" name='email' className="input" readOnly defaultValue={user.email} />
 
                                 {/* <label className="label">Service ID</label>
                                 <input type="text" name='serviceId' className="input" /> */}
