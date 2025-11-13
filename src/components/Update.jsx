@@ -22,7 +22,7 @@ const Update = () => {
             ProviderEmailForAuth: user?.email
         }
 
-        fetch(`http://localhost:3000/services/${_id}`, {
+        fetch(`home-hero-server-henna.vercel.app/services/${_id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

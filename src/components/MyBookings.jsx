@@ -18,7 +18,7 @@ const MyBookings = () => {
   // Fetch bookings for logged-in user
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/bookings?email=${user?.email}`)
+      fetch(`home-hero-server-henna.vercel.app/bookings?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setBookings(data))
         .catch(err => console.error(err));

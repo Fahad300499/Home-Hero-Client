@@ -20,7 +20,7 @@ const Services = () => {
     e.preventDefault();
     setLoading(true);
 
-    let url = `http://localhost:3000/services/filter?`;
+    let url = `home-hero-server-henna.vercel.app/services/filter?`;
     if (minPrice) url += `minPrice=${minPrice}&`;
     if (maxPrice) url += `maxPrice=${maxPrice}&`;
     if (sortOrder) url += `order=${sortOrder}`;

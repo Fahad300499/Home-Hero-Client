@@ -24,7 +24,7 @@ const AddService = () => {
             Email: email
         }
 
-        fetch('http://localhost:3000/services', {
+        fetch('home-hero-server-henna.vercel.app/services', {
             method : 'POST',
         headers: {
             'content-type' : 'application/json'

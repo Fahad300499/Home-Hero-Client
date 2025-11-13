@@ -34,7 +34,7 @@ const MyServices = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:3000/services/${_id}`, {
+                fetch(`home-hero-server-henna.vercel.app/services/${_id}`, {
                     method: 'DELETE'
                 })
                 .then(res=>res.json())

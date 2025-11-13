@@ -28,14 +28,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         Component: Home,
-        loader: ()=> fetch('http://localhost:3000/services')
+        loader: ()=> fetch('home-hero-server-henna.vercel.app/services')
       },
     ]
   },
         {
         path: '/services',
         Component: Services,
-        loader: ()=> fetch('http://localhost:3000/all-services')
+        loader: ()=> fetch('home-hero-server-henna.vercel.app/all-services')
       },
        {
         path: '/AddServices',
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
       {
         path: '/servicesDetails/:id',
         element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:3000/services/${params.id}`)
+        loader:({params})=>fetch(`home-hero-server-henna.vercel.app/services/${params.id}`)
       },
       {
         path: '/my-bookings',
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
       {
         path:'/update/:id',
         Component: Update,
-        loader:({params})=>fetch(`http://localhost:3000/services/${params.id}`)
+        loader:({params})=>fetch(`home-hero-server-henna.vercel.app/services/${params.id}`)
       },
       
       {
