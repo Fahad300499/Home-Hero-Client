@@ -27,7 +27,7 @@ const Home = () => {
             }  
         </div>
 
-{/* *****        */}
+<Link to='/services' className='btn mb-4 text-white bg-gray-500 flex justify-center'>Show All Services</Link>
         <div>
             <ChooseUs></ChooseUs>
         </div>
