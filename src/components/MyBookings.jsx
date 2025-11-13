@@ -37,7 +37,7 @@ const MyBookings = () => {
       confirmButtonText: "Yes, delete it!"
     }).then(result => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/bookings/${_id}`, { method: 'DELETE' })
+        fetch(`home-hero-server-henna.vercel.app/bookings/${_id}`, { method: 'DELETE' })
           .then(res => res.json())
           .then(data => {
             if (data.deletedCount) {
